@@ -470,88 +470,71 @@ th {
 }
 /* 2. Print Logic: Hides everything except the result table when printing */
 @media print {
-  .sidebar, .print-btn, .submit-reg-btn, #msg-box {
-  display: none !important;
-  }
-
-  .sidebar .active {
-  display: none !important;
-  }
-
-  .dashboard-body {
-  display: block !important;
-  }
-
-  .dashboard-content {
-  padding: 0 !important;
-  margin: 0 !important;
-  width: 100% !important;
-  }
-
-  .registration-container {
-  box-shadow: none !important;
-  border: none !important;
-  padding: 0 !important;
-  width: 100% !important;
-  }
-
-  .course-table {
-  display: table !important;
-  width: 100% !important;
-  border-collapse: collapse !important;
-  }
-
-  .course-table tbody tr {
-  display: table-row !important;
-  }
-  .course-table th,
-  .course-table td {
-  border: 1px solid rgb(150, 150, 150) !important;
-  padding: 10px !important;
-  text-align: left !important;
-  color: rgb(0, 0, 0) !important;
-  }
-  .reg-footer {
-  display: flex !important;
-  justify-content: space-between !important;
-  margin-top: 20px !important;
-  }
-}
-
-/*
-@media print {
-  .sidebar, .print-btn, .active, .submit-reg-btn, #msg-box {
+  /* Common: Hide UI elements on all pages */
+  .sidebar, 
+  .print-btn, 
+  .submit-reg-btn, 
+  .active, 
+  #msg-box,
+  .nav-search {
     display: none !important;
   }
-  .course-table tbody tr{
-    display: none;
-  }
-  .course-table tbody 
-  tr:has(input:checked) {
-    display: table-row;
-  }
+
+  /* Common: Layout resets */
   .dashboard-body {
-    display: block;
+    display: block !important;
   }
-  .registration-container {
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-  }
+
   .dashboard-content {
-    padding: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
   }
-  /* Ensure the table is clear and readable on paper */
-  /*
+
+  .registration-container {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
   .course-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+    display: table !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
   }
-  /* Remove the 'Select' column from print because you don't need checkboxes on paper */
-  /*
-  th:first-child, td:first-child {
-    display: none;
+
+  .course-table th,
+  .course-table td {
+    border: 1px solid rgb(150, 150, 150) !important;
+    padding: 10px !important;
+    color: rgb(0, 0, 0) !important;
+  }
+
+  /* --- PAGE SPECIFIC RULES --- */
+
+  /* 1. Results Page: Show everything in the table */
+  .results-page .course-table tbody tr {
+    display: table-row !important;
+  }
+
+  /* 2. Registration Page: Hide unchecked rows and the first column */
+  .reg-page .course-table tbody tr {
+    display: none; /* Hide all rows by default */
+  }
+
+  .reg-page .course-table tbody tr:has(input:checked) {
+    display: table-row !important; /* Only show checked rows */
+  }
+
+  .reg-page th:first-child, 
+  .reg-page td:first-child {
+    display: none !important; /* Hide the "Select" checkbox column */
+  }
+
+  .reg-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-top: 20px !important;
   }
 }
-*/

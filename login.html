@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student Login | Oluwa Dynasty University</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <nav class="main-nav">
+        <div class="logo-container">
+          <img src="images/school-logo.jpeg" alt="ODU Logo" class="pic">
+          <div class="logo-text">
+            <p class="logo-name">Oluwa Dynasty University</p>
+            <p class="logo-name">Lagos, Nigeria.</p>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="department.html">Departments</a>
+          <a href="login.html">Student Login</a>
+        </div>
+        <form class="nav-search">
+          <input type="text" placeholder="Search ODU..." class="search-input">
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+      </nav>
+
+    <main>
+      <h1 class="align">Student Portal Access</h1>
+      <div class="login-container">
+        <h2>Login to Your Portal</h2>
+        <p>Enter your credentials to access your academic records.</p>
+          
+        <form id="login-form">
+          <div class="form-group">
+              <label for="student-id">Student ID</label>
+              <input type="text" id="student-id" name="student-id" placeholder="e.g. ODU/2026/001" 
+                required oninvalid="this.setCustomValidity('Oga, please enter your Student ID!')"
+                oninput="this.setCustomValidity('')"
+              >
+          </div>
+
+          <div class="form-group">
+              <label for="password">Password</label>
+              <div class="password-wrapper" style="position: relative; display: block;">
+                <input type="password" id="password" name="password" placeholder="password" required
+                  required oninvalid="this.setCustomValidity('You don forget to type password nau!')"
+                  oninput="this.setCustomValidity('')"
+                  style="padding-right: 40px; width: 100%;"
+                >
+                <span id="toggle-password" 
+                  title="Show Password" 
+                  style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); cursor: pointer; user-select: none;">
+                  👁️
+                </span>
+              </div>
+          </div>
+
+          <button type="submit" class="login-btn">Login</button>
+        </form>
+          
+        <p class="forgot-pass"><a href="#">Forgot Password?</a></p>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Oluwa Dynasty University, Lagos. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

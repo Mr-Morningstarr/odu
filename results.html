@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Checker | ODU</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="dashboard-body">
+    <aside class="sidebar">
+      <h3>ODU Portal</h3>
+      <ul>
+        <li><a href="dashboard.html">My Profile</a></li>
+        <li><a href="registration.html">Course Registration</a></li>
+        <li><a href="results.html" class="active">Result Checker</a></li>
+        <li><a href="fees.html">Fees Payment</a></li>
+        <li><a href="index.html" style="color: coral;">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      <header class="dash-header">
+        <div class="welcome-pic">
+          <img src="images/profile-pic.jpg" alt="Student Profile" class="pic">
+          <div class="welcome-text"> 
+            <h2>Academic Results</h2>
+            <p>Hassan Oluwa | ODU/2026/001</p>
+          </div>
+          <div class="spacer"></div>
+        </div>
+      </header>
+
+      <section class="registration-container"> <div class="reg-header">
+          <h3>Rain Semester Results - 2025/2026</h3>
+        </div>
+
+        <table class="course-table"> <thead>
+            <tr>
+              <th>Course Code</th>
+              <th>Course Title</th>
+              <th>Units</th>
+              <th>Status</th>
+              <th>GP</th>
+              <th>Credit Point</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>MIC 427</td>
+              <td>Medical Microbiology</td>
+              <td>3</td>
+              <td>E</td>
+              <td>4</td>
+              <td>12</td>
+            </tr>
+            <tr>
+              <td>MIC 497</td>
+              <td>Seminar</td>
+              <td>2</td>
+              <td>C</td>
+              <td>5</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>MIC 413</td>
+              <td>Biodeterioration</td>
+              <td>2</td>
+              <td>R</td>
+              <td>5</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>ENT 401</td>
+              <td>Entrepreneurship</td>
+              <td>2</td>
+              <td>C</td>
+              <td>5</td>
+              <td>10</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="reg-footer">
+          <p>Semester GPA: <strong>4.85</strong></p>
+          <p>CGPA: <strong>4.72</strong></p>
+          <button type="button" class="print-btn" onclick="window.print()">
+            Print Result
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

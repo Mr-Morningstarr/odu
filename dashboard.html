@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Student Dashboard | ODU</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="dashboard-body">
+    <aside class="sidebar">
+      <h3>ODU Portal</h3>
+      <ul>
+        <li><a href="dashboard.html" class="active">My Profile</a></li>
+        <li><a href="registration.html">Course Registration</a></li>
+        <li><a href="results.html">Result Checker</a></li>
+        <li><a href="fees.html">Fees Payment</a></li>
+        <li><a href="login.html" style="color: coral;">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      <header class="dash-header">
+        <div class="welcome-pic">
+          <img src="images/profile-pic.jpg" alt="Student Profile" class="pic">
+                
+          <div class="welcome-text"> 
+            <h2>Welcome, Hassan Oluwa!</h2>
+            <p>Matric No: ODU/2026/001</p>
+          </div>
+
+          <div class="spacer"></div>
+                
+        </div>
+      </header>
+
+      <section class="stats-grid">
+        <div class="stat-card">
+          <h4>Current CGPA</h4>
+          <p class="stat-number">4.72</p>
+        </div>
+        <div class="stat-card">
+          <h4>Level</h4>
+          <p class="stat-number">400L</p>
+        </div>
+        <div class="stat-card">
+          <h4>Department</h4>
+          <p>Microbiology</p>
+        </div>
+      </section>
+
+      <section class="registered-courses">
+        <h3>Registered Courses - Rain Semester</h3>
+        <table>
+          <tr>
+            <th>Course Code</th>
+            <th>Course Title</th>
+            <th>Units</th>
+          </tr>
+          <tr>
+            <td>MIC 427</td>
+            <td>Medical Microbiology</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>MIC 497</td>
+            <td>Seminar</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>ZOO 401</td>
+            <td>Principles of Parasitology 1</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>ENT 401</td>
+            <td>Entrepreneurship</td>
+            <td>2</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

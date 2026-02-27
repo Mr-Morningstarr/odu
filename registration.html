@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Course Registration | ODU</title>
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="dashboard-body">
+    <aside class="sidebar">
+      <h3>ODU Portal</h3>
+      <ul>
+        <li><a href="dashboard.html">My Profile</a></li>
+        <li><a href="registration.html" class="active">Course Registration</a></li>
+        <li><a href="results.html">Result Checker</a></li>
+        <li><a href="fees.html">Fees Payment</a></li>
+        <li><a href="index.html" style="color: coral;">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="dashboard-content">
+      <header class="dash-header">
+        <div class="welcome-pic">
+          <img src="images/profile-pic.jpg" alt="Student Profile" class="pic">
+                
+          <div class="welcome-text"> 
+            <h2>Course Registration</h2>
+            <p>Hassan Oluwa | ODU/2026/001</p>
+          </div>
+
+          <div class="spacer"></div>
+                
+        </div>
+      </header>
+      <section class="registration-container">
+        <div class="reg-header">
+          <h3>Semester Course Registration</h3>
+          <p>Session: 2025/2026 | Semester: Rain</p>
+        </div>
+
+        <form id="reg-form">
+          <table class="course-table">
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Course Code</th>
+                <th>Course Title</th>
+                <th>Units</th>
+                <th>Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="3" name="course" value="MIC427"></td>
+                <td>MIC 427</td>
+                <td>Medical Microbiology</td>
+                <td>3</td>
+                <td>Elective</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="2" name="course" value="MIC497"></td>
+                <td>MIC 497</td>
+                <td>Seminar</td>
+                <td>2</td>
+                <td>Compulsory</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="3" name="course" value="MIC407"></td>
+                <td>MIC 407</td>
+                <td>Pharmaceutical Microbiology</td>
+                <td>3</td>
+                <td>Elective</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="2" name="course" value="ENT401"></td>
+                <td>ENT 401</td>
+                <td>Entrepreneurship</td>
+                <td>2</td>
+                <td>Compulsory</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="3" name="course" value="MIC413"></td>
+                <td>MIC 413</td>
+                <td>Biodeterioration</td>
+                <td>3</td>
+                <td>Reqired</td>
+              </tr>
+              <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="3" name="course" value="ZOO401"></td>
+                <td>ZOO 401</td>
+                <td>Principles of Parasitology 1</td>
+                <td>3</td>
+                <td>Reqired</td>
+              </tr>
+                <tr>
+                <td><input type="checkbox" class="course-checkbox" data-unit="3" name="course" value="MIC403"></td>
+                <td>MIC 403</td>
+                <td>industrial Microbiology</td>
+                <td>3</td>
+                <td>Elective</td>
+              </tr>
+            </tbody>
+          </table>
+          <p id="msg-box" style="color: rgb(200, 0, 0); font-weight: bold; min-height: 20px;"></p>
+          <div class="reg-footer">
+            <p>Total Units Selected: <span id="unit-count">0</span></p>
+            <button type="submit" class="submit-reg-btn">Confirm Registration</button>
+            <button type="button" class="print-btn" onclick="window.print()">
+              Print Course Form
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

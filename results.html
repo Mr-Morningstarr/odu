@@ -8,13 +8,18 @@
   </head>
   <body class="dashboard-body">
     <aside class="sidebar">
+      <button class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <h3>ODU Portal</h3>
-      <ul>
+      <ul id="nav-list">
         <li><a href="dashboard.html">My Profile</a></li>
         <li><a href="registration.html">Course Registration</a></li>
         <li><a href="results.html" class="active">Result Checker</a></li>
         <li><a href="fees.html">Fees Payment</a></li>
-        <li><a href="index.html" style="color: coral;">Logout</a></li>
+        <li><a href="index.html" onclick="logoutUser()" style="color: coral;">Logout</a></li>
       </ul>
     </aside>
 
@@ -90,7 +95,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
-
 </html>
-

@@ -8,13 +8,18 @@
   </head>
   <body class="dashboard-body">
     <aside class="sidebar">
+      <button class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <h3>ODU Portal</h3>
-      <ul>
+      <ul id="nav-list">
         <li><a href="dashboard.html" class="active">My Profile</a></li>
         <li><a href="registration.html">Course Registration</a></li>
         <li><a href="results.html">Result Checker</a></li>
         <li><a href="fees.html">Fees Payment</a></li>
-        <li><a href="login.html" style="color: coral;">Logout</a></li>
+        <li><a href="login.html" onclick="logoutUser()" style="color: coral;">Logout</a></li>
       </ul>
     </aside>
 
@@ -27,9 +32,7 @@
             <h2>Welcome, Hassan Oluwa!</h2>
             <p>Matric No: ODU/2026/001</p>
           </div>
-
-          <div class="spacer"></div>
-                
+          <div class="spacer"></div>   
         </div>
       </header>
 
@@ -79,5 +82,6 @@
         </table>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>

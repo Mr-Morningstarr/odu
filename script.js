@@ -1,7 +1,24 @@
+// PART 1: GLOBAL SCOPE
+// Keep this outside so the onclick="logoutUser()" in HTML works
+function logoutUser() {
+  // Try to close the tab if it was opened via window.open
+  window.close();
+  
+  // Always redirect as a fallback
+  window.location.href = "login.html";
+}
 
 // Step 1: Wait for the HTML to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-  
+  // --- MOBILE MENU LOGIC ---
+  const menuToggle = document.getElementById('menu-toggle');
+  const navList = document.getElementById('nav-list');
+
+  if (menuToggle && navList) {
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  }
   // --- PART A: COURSE REGISTRATION LOGIC ---
   
   // Step 2: Select all checkboxes and the unit display span

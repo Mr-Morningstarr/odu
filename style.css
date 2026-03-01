@@ -469,18 +469,38 @@ th {
   background-color: rgb(30, 30, 30);
 }
 /* 2. Print Logic: Hides everything except the result table when printing */
+/* 1. DESKTOP LAYOUT (Default) */
+/* This part ensures the sidebar stays on the left on computers */
+.dashboard-body {
+  display: flex;
+  flex-direction: row; 
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+/* Hide the hamburger button on desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* 2. PRINT LOGIC */
 @media print {
-  /* Common: Hide UI elements on all pages */
   .sidebar, 
   .print-btn, 
   .submit-reg-btn, 
   .active, 
   #msg-box,
-  .nav-search {
+  .nav-search,
+  .menu-toggle {
     display: none !important;
   }
 
-  /* Common: Layout resets */
   .dashboard-body {
     display: block !important;
   }
@@ -512,24 +532,21 @@ th {
   }
 
   /* --- PAGE SPECIFIC RULES --- */
-
-  /* 1. Results Page: Show everything in the table */
   .results-page .course-table tbody tr {
     display: table-row !important;
   }
 
-  /* 2. Registration Page: Hide unchecked rows and the first column */
   .reg-page .course-table tbody tr {
-    display: none; /* Hide all rows by default */
+    display: none; 
   }
 
   .reg-page .course-table tbody tr:has(input:checked) {
-    display: table-row !important; /* Only show checked rows */
+    display: table-row !important; 
   }
 
   .reg-page th:first-child, 
   .reg-page td:first-child {
-    display: none !important; /* Hide the "Select" checkbox column */
+    display: none !important; 
   }
 
   .reg-footer {
@@ -539,25 +556,51 @@ th {
   }
 }
 
-/* MOBILE RESPONSIVENESS */
+/* 3. MOBILE RESPONSIVENESS */
 @media screen and (max-width: 768px) {
-  /* 1. Stack the Sidebar and Main Content */
+  /* Stack the Sidebar and Main Content only on small screens */
   .dashboard-body {
-    display: flex;
-    flex-direction: column; /* Stacks sidebar on top of content */
+    flex-direction: column; 
   }
 
   .sidebar {
     width: 100%;
     height: auto;
+    position: relative;
     padding: 10px;
   }
 
-  .sidebar ul {
+  /* Show the hamburger button on mobile */
+  .menu-toggle {
     display: flex;
-    flex-wrap: wrap; /* Allows menu items to wrap to next line */
-    justify-content: center;
-    gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .menu-toggle span {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 2px;
+  }
+
+  /* Hide navigation list by default on mobile */
+  #nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Show class for JavaScript toggle */
+  #nav-list.show {
+    display: flex;
   }
 
   .sidebar h3 {
@@ -565,9 +608,8 @@ th {
     margin-bottom: 10px;
   }
 
-  /* 2. Fix the "Big" Header Text */
   .dash-header h2 {
-    font-size: 1.5rem; /* Shrinks the text so it doesn't overflow */
+    font-size: 1.5rem; 
   }
 
   .welcome-pic {
@@ -575,26 +617,21 @@ th {
     text-align: center;
   }
 
-  /* 3. Stack the Stats Cards */
   .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Makes cards full width and stacked */
+    grid-template-columns: 1fr; 
     gap: 15px;
   }
 
-  /* 4. Make the Table Scrollable */
-  /* This prevents the table from stretching the whole page */
   .registration-container {
     overflow-x: auto;
     padding: 10px;
   }
 
   .course-table {
-    font-size: 0.85rem; /* Makes text slightly smaller for small screens */
-    min-width: 600px; /* Keeps table readable; user can swipe left/right */
+    font-size: 0.85rem; 
+    min-width: 600px; 
   }
 
-  /* 5. Adjust Buttons */
   .reg-footer {
     flex-direction: column;
     gap: 15px;
@@ -602,8 +639,6 @@ th {
   }
 
   .print-btn, .submit-reg-btn {
-    width: 100%; /* Full width buttons are easier to tap with thumbs */
+    width: 100%; 
   }
 }
-
-

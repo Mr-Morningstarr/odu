@@ -463,6 +463,7 @@ th {
   font-weight: bold;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 .print-btn:hover {
@@ -491,6 +492,11 @@ th {
 
 /* 2. PRINT LOGIC */
 @media print {
+  /* 1. ADD THIS AT THE TOP: Forces mobile browsers to show colors/shading */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
   .sidebar, 
   .print-btn, 
   .submit-reg-btn, 
@@ -641,4 +647,5 @@ th {
   .print-btn, .submit-reg-btn {
     width: 100%; 
   }
+
 }
